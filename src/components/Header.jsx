@@ -7,9 +7,9 @@ function Header() {
         <h2 className='font-bold text-2xl'>React TanStack Query</h2>
     <nav className='flex gap-4'>
         <NavLink to="/">Home</NavLink>
-        <NavLink to="/about">About</NavLink>
+        <NavLink to="/about">About Project</NavLink>
         <NavLink to="/fetchRQ">FetchRQ</NavLink>
-        <NavLink to="/contact">Contact</NavLink>
+        <NavLink to="/inf-scroll">Infinite Scroll</NavLink>
       </nav>
       </div>
   )

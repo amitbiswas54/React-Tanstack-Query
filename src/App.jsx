@@ -7,6 +7,7 @@ import FetchRQ from "./pages/FetchRQ";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import FetchInd from "./pages/FetchInd";
+import InfScroll from "./pages/InfScroll";
 
 const router = createBrowserRouter(
   [
@@ -15,10 +16,10 @@ const router = createBrowserRouter(
       element: <Layout />,
       children: [
         { index: true, element: <Home/> },
-        { path: "about", element: <About/> },
-        { path: "contact", element: <Contact/> },
+        { path: "about", element: <About/> },  
         { path: "fetchRQ", element: <FetchRQ/> },
-         { path: "fetchRQ/:id", element: <FetchInd/> }
+         { path: "fetchRQ/:id", element: <FetchInd/> },
+           { path: "inf-scroll", element: <InfScroll/> },
       ],
     },
   ],

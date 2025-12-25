@@ -39,3 +39,18 @@ export const updatePost = async (id)=>{
   }
 
 }
+
+
+// infinite scroll api
+
+export const infiniteScroll = async ({ pageParam = 1 }) => {
+  try {
+    const res = await axios.get(`https://api.github.com/users?per_page=10&page=${pageParam}`); // ✅ correct endpoint
+    return res.data;                           // ✅ correct property
+  } catch (error) {
+    throw error;                  
+                     // ✅ required for React Query
+  }
+
+};
+
