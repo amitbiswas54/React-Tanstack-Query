@@ -57,16 +57,19 @@ const queryClient = useQueryClient();
 
   return (
     <>
-      <h2 className="text-gray-900 text-3xl font-bold">Posts</h2>
+      <h2 className="text-gray-900 text-3xl font-bold pb-4">Posts</h2>
       <ul>
         {data.map(({ id, title, body }) => (
-          <li key={id} className="my-4 py-5 border-b border-gray-300">
+                <li key={id}className="border-l-6 mb-4 border-orange-600 bg-white dark:bg-slate-900 rounded-md shadow-sm px-4 py-5 lg:px-10 lg:py-8">
+
             <NavLink to={`/fetchRQ/${id}`}>
-            <h2>{id}</h2>
+              <div className="text-2xl w-[60px] h-[60px] flex justify-center items-center rounded-full text-white font-semibold bg-slate-800 uppercase ">
+            {id}</div>
+
               <h4 className="text-orange-600 text-2xl font-bold uppercase">
                 {title}
               </h4>
-              <p className="text-gray-600 text-xl">{body}</p>
+              <p className="text-gray-600 text-xl mt-4">{body}</p>
             </NavLink>
 
             <div className="pt-5 flex justify-end">

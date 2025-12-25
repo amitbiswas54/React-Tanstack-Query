@@ -1,11 +1,11 @@
 import React from 'react';
 import { fetchIndData } from '../app/Api';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 
 function FetchInd() {
   const { id } = useParams();
-
+  const navigate = useNavigate();
   const { data = {}, isLoading, isError, error } = useQuery({
     queryKey: ["post", id],
     queryFn: () => fetchIndData(id),
@@ -24,10 +24,27 @@ function FetchInd() {
 
   return (
     <>  
-      <h2>Post {id}</h2>
-      <h3>{data?.title}</h3>
-        <p>{data?.body}</p>
-        
+    <div className="border-l-6 border-orange-600 bg-white dark:bg-slate-900 rounded-md shadow-sm px-4 py-5 lg:px-10 lg:py-8">
+ 
+  <div className="text-2xl w-[60px] h-[60px] flex justify-center items-center rounded-full bg-orange-600 font-semibold text-white uppercase ">
+   {id}
+  </div>
+
+  <h3 className="mt-2 text-xl uppercase lg:text-2xl font-bold text-slate-800 dark:text-white">
+    {data?.title}
+  </h3>
+
+  <p className="mt-4 text-slate-400 dark:text-slate-300 leading-relaxed">
+    {data?.body}
+  </p>
+   <button
+        onClick={() => navigate(-1)}
+        className="mb-4 mt-4 inline-flex items-center gap-2 cursor-pointer font-medium text-orange-600 hover:text-white"
+      >
+        ← Back
+      </button>
+</div>
+
     </>
   );
 }
