@@ -29,3 +29,13 @@ export const deletePost = async (id)=>{
   }
 
 }
+
+export const updatePost = async (id)=>{ 
+ try {
+    const res = await api.put(`/posts/${id}, {title, body}`); // ✅ correct endpoint
+    return res.data;                           // ✅ correct property
+  } catch (error) {
+    throw error;                               // ✅ required for React Query
+  }
+
+}

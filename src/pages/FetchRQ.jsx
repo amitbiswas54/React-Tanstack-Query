@@ -30,6 +30,17 @@ const queryClient = useQueryClient();
   });
 
 
+    //! mutation function for delete
+  const updateMutation = useMutation({  
+    mutationFn: (id)=> updatePost(id),
+    onSuccess:(conformationMsg, id) =>{
+      // queryKey: ["posts", pageNumber], --- this is refer from useQuery
+      queryClient.setQueryData(["posts", pageNumber], (current)=>{
+        return current?.filter((post)=> post.id !== id)
+      })
+    }  
+  });
+
 
   if (isLoading) return <p>Loading...</p>;
   if (isError) {
@@ -59,12 +70,15 @@ const queryClient = useQueryClient();
             </NavLink>
 
             <div className="pt-5 flex justify-end">
+               <NavLink to={`/fetchRQ/${id}`}
+          className="bg-green-600 hover:bg-green-700  
+          text-white px-2 py-1 cursor-pointer rounded-bl-sm rounded-tl-sm  ">View</NavLink>
           <button 
-          className="bg-gray-600 hover:bg-gray-700 me-4 
-          text-white px-4 py-1 cursor-pointer rounded-sm">Edit</button>
+          className="bg-gray-600 hover:bg-gray-700 
+          text-white px-2 py-1 cursor-pointer ">Edit</button>
           <button
-          className="bg-orange-600 hover:bg-orange-700 
-          text-white px-4 py-1 cursor-pointer rounded-sm"
+          className="bg-red-600 hover:bg-red-700 
+          text-white px-2 py-1 cursor-pointer rounded-br-sm rounded-tr-sm"
           onClick={()=>deleteMutation.mutate(id)}>Delete</button>
         </div>
           </li>

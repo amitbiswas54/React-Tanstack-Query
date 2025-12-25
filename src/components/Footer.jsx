@@ -1,8 +1,18 @@
 import React from 'react'
+import { DynamicIcon } from 'lucide-react/dynamic';
 
 function Footer() {
   return (
-    <div>Footer</div>
+    <div className='bg-gray-300 py-6' >
+      <div className='container text-gray-950 mx-auto text-center flex flex-col' >
+        <h2 className='text-2xl font-semibold text-center '>Amit Biswas <span className='text-sm font-semibold text-gray-950'>(Fontend Developer)</span></h2>
+     
+          <div className='flex gap-2 justify-center '>
+            <div className='flex gap-2 items-center'> <DynamicIcon name="phone" color="red" size={18} />9007097330</div>
+         <div className='flex gap-2 items-center'> <DynamicIcon name="mail" color="red" size={18} />amit.biswas54@gmail.com</div>
+      </div>
+      </div>
+    </div>
   )
 }
 

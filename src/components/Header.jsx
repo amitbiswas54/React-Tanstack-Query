@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 function Header() {
   return (
-    <div  className="flex gap-4 justify-between p-4 bg-gray-800 text-white">
+    <div  className="flex gap-4 justify-between p-4 bg-gray-900 text-white">
         <h2 className='font-bold text-2xl'>React TanStack Query</h2>
     <nav className='flex gap-4'>
         <NavLink to="/">Home</NavLink>
