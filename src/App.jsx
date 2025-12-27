@@ -8,6 +8,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import FetchInd from "./pages/FetchInd";
 import InfScroll from "./pages/InfScroll";
+import IntersectionObserver from "./pages/intersectionObserver";
+
 
 const router = createBrowserRouter(
   [
@@ -20,6 +22,7 @@ const router = createBrowserRouter(
         { path: "fetchRQ", element: <FetchRQ/> },
          { path: "fetchRQ/:id", element: <FetchInd/> },
            { path: "inf-scroll", element: <InfScroll/> },
+             { path: "intersection-observer", element: <IntersectionObserver/> },
       ],
     },
   ],

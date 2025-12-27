@@ -57,6 +57,8 @@ const queryClient = useQueryClient();
 
   return (
     <>
+      <section className="w-screen py-10 px-4 sm:px-6 lg:px-12">
+        <div className="mb-4 container mx-auto">
       <h2 className="text-gray-900 text-3xl font-bold pb-4">Posts</h2>
       <ul>
         {data.map(({ id, title, body }) => (
@@ -76,9 +78,9 @@ const queryClient = useQueryClient();
                <NavLink to={`/fetchRQ/${id}`}
           className="bg-green-600 hover:bg-green-700  
           text-white px-2 py-1 cursor-pointer rounded-bl-sm rounded-tl-sm  ">View</NavLink>
-          <button 
+          {/* <button 
           className="bg-gray-600 hover:bg-gray-700 
-          text-white px-2 py-1 cursor-pointer ">Edit</button>
+          text-white px-2 py-1 cursor-pointer ">Edit</button> */}
           <button
           className="bg-red-600 hover:bg-red-700 
           text-white px-2 py-1 cursor-pointer rounded-br-sm rounded-tr-sm"
@@ -99,6 +101,8 @@ const queryClient = useQueryClient();
          onClick={()=>setPageNumber((prev)=> prev +3)}
          className="bg-gray-700 hover:bg-orange-700 text-white px-4 py-1  cursor-pointer rounded-sm">Next</button>
       </div>
+      </div>
+      </section>
     </>
   );
 }

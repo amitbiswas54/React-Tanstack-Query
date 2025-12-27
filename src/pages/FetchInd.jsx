@@ -24,6 +24,8 @@ function FetchInd() {
 
   return (
     <>  
+      <section className="w-screen py-10 px-4 sm:px-6 lg:px-12">
+        <div className="mb-4 container mx-auto">
     <div className="border-l-6 border-orange-600 bg-white dark:bg-slate-900 rounded-md shadow-sm px-4 py-5 lg:px-10 lg:py-8">
  
   <div className="text-2xl w-[60px] h-[60px] flex justify-center items-center rounded-full bg-orange-600 font-semibold text-white uppercase ">
@@ -44,7 +46,8 @@ function FetchInd() {
         ← Back
       </button>
 </div>
-
+</div>
+</section>
     </>
   );
 }
