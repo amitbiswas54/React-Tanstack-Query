@@ -18,7 +18,7 @@ function Home() {
         <div className="bg-gray-100 rounded-2xl shadow-md p-6 sm:p-8 space-y-6 text-[1.2rem]">
           {/* Description */}
           <p className="text-gray-800 leading-relaxed">
-            Developed a modern <span className="font-semibold text-orange-500">React-based web application</span> 
+            Developed a modern <span className="font-semibold text-orange-500">React-based web application </span> 
             implementing server-state management using{" "}
             <span className="font-semibold text-orange-500">TanStack React Query</span>. 
             The project efficiently handles API-driven data fetching, pagination,
